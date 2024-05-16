@@ -1,0 +1,26 @@
+<p>{{variable}}</p>
+
+
+
+@if (logedIn) {
+  <h1>Hola {{user}}</h1>
+
+}@else{
+  <h1>Tienes que iniciar sesion</h1>
+  <button (click)="logedIn=true">Inicia sesion</button>
+}
+<section>
+@for (n of array; track $index) {
+  <h4>{{n}} en la posicion {{$index}}</h4>
+}
+<img (click)="greet()" src="https://github.com/chev.png" alt="Photo">
+<app-games (addFavoriteEvent)="getFavorite($event)" user="{{user}}">
+
+</app-games>
+
+@if (favGame != '') {
+<p>Tu juego favorito es {{favGame}}</p>
+}
+</section>
+
+
